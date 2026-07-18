@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "onion-chat"
+version = "0.1"
+readme = "README.md"
+maintainers = [
+  {name = "Gumar Arutunyan", email = "legendary.killtell@gmail.com"}
+]
+description = "Anonymous encrypted IRC chat over Tor with Ed25519 signatures and ratchet-based PFS"
+requires-python = ">=3.11"
+dependencies = [
+    "pysocks>=1.7.1",
+    "cryptography>=42.0",
+]
+
+[project.scripts]
+onion-chat = "onion_chat.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
